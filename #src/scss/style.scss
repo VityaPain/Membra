@@ -97,9 +97,11 @@ body{
     background: linear-gradient(to bottom,rgba(15,22,147,0.6786064767703957), transparent);
 }
 .border{
+    z-index: 60;
     &__after {width: 60%; background-color: #0F1693; height: 2px; @media (max-width:767px){width: 50%;}}
     &__before{width: 30%; background-color: #0F1693; height: 2px; @media (max-width:767px){width: 50%;}}
     .header-logo{
+        a{display:flex; justify-content: center; align-items: center;}
         transform: translateY(-50%);
         margin: 0 15px;
         @media (max-width:767px){min-width:120px}
