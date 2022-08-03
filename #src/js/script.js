@@ -59,4 +59,14 @@ $(document).ready(function() {
         }
         $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
     });
+    // переключение табов
 });
+const links = document.querySelectorAll('.tabs__item');
+links.forEach((e) => {
+    e.addEventListener('click', (event) => {
+        links.forEach((ev) => {
+            ev.classList.remove('active');
+        })
+        e.classList.add('active');
+    })
+})

@@ -251,6 +251,88 @@ body{
 
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Направления----------------------------------------------//
+.directions {
+    padding: 130px 0px 70px;
+}
+.directions-tabs {
+    &__items {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__body {
+    }
+}
+.tabs {
+    &__item {
+        color:#0F1693;
+        flex: 0 1 33.3333%;
+        padding: 10px 0px;
+        text-align: center;
+        height: 100%;
+        border-left:#0F1693 2px solid;
+        border-right: #0F1693 2px solid;
+        border-bottom:#0F1693 2px solid;
+        letter-spacing: 1px;
+        &:nth-child(2) {
+            border-left:#0F1693 1px solid;
+            border-right: #0F1693 1px solid;
+        }
+        &:nth-child(1) {
+            border-right: #0F1693 1px solid;
+        }
+        &:nth-child(3) {
+            border-left: #0F1693 1px solid;
+        }
+        &.active {
+            background-color:#0F1693;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+.tabs-block {
+    display: flex;
+    margin-bottom: 10px;
+    display: none;
+    &__left {
+        flex: 0 1 50%;
+        background-color: red;
+    }
+
+    &__right {
+        flex: 0 1 50%;
+        padding: 50px 20px;
+    }
+
+    &__right-title {
+        font-size: 28px;
+        line-height: 130%;
+        padding: 0px 0px 30px;
+        letter-spacing: 1.5px;
+    }
+
+    &__right-descr {
+        font-family: 'Candara';
+        font-size: 18px;
+        line-height: 130%;
+        padding: 0px 0px 30px;
+    }
+
+    &__right-link {
+        color: black;
+        font-family: 'Candara';
+        font-size: 18px;
+    }
+    &:target {
+        display: flex;
+    }
+}
 
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Технологии-----------------------------------------------//
