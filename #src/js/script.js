@@ -1,5 +1,13 @@
-function changeSize() {
-    console.log(1+1);
+let len = 0
+    step = 1;
+function myFunction() {
+    if (window.innerWidth > 900) {
+        len = $('.news-slider__item').length/3;
+    } else {
+        len = $('.news-slider__item').length/2;
+    }
+    $('.step').remove();
+    $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
 }
 
 const burger = document.querySelector('.header-burger'),
@@ -21,6 +29,7 @@ cardLink.forEach(element => {
     })
 });
 
+
 burger.addEventListener('click', (event) => {
     burger.classList.toggle('active');
     menuBurger.classList.toggle('active');
@@ -41,6 +50,7 @@ burger.addEventListener('click', (event) => {
     }
    
 });
+
 
 sublinkMenu.forEach((event)=>{
     event.addEventListener('click',(e)=>{
@@ -99,8 +109,7 @@ $(document).ready(function() {
         ]
     });
     // Подсчет шагов в слайдере
-    let len = $('.news-slider__item').length/3,
-        step = 1;
+    myFunction();
     $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
     $('.slick-arrow').click(function() {
         $('.step').remove();
@@ -122,10 +131,16 @@ $(document).ready(function() {
         }, 600);               
     });
 });
-page = document.querySelector('body');
-page.addEventListener('resize', (e) => {
-    console.log(e);
-});
+
+
+// page = document.querySelector('body');
+// page.addEventListener('resize', (e) => {
+//     console.log(e);
+// });
+// console.log(2);
+window.addEventListener("resize", myFunction);
+
+
 const links = document.querySelectorAll('.tabs__item'),
     // linksNum = document.querySelectorAll('.tabs-descr__links .tabs__item'),
     images = document.querySelectorAll('.tabs-images__photo'),
