@@ -65,6 +65,7 @@ $(document).ready(function() {
     // переключение табов
 });
 const links = document.querySelectorAll('.tabs__item'),
+    linksNum = document.querySelectorAll('.directions-tabs__right .tabs__item'),
     tabs = document.querySelectorAll('.tabs-block');
 
 let idLink = '';
@@ -80,6 +81,11 @@ links.forEach((e) => {
         })
         idLink = e.id;
         tabs.forEach((e) => {
+            if (e.id == idLink) {
+                e.classList.add('active')
+            }
+        })
+        linksNum.forEach((e) => {
             if (e.id == idLink) {
                 e.classList.add('active')
             }
