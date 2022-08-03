@@ -26,7 +26,6 @@ burger.addEventListener('click', (event) => {
    
 });
 
-
 sublinkMenu.forEach((event)=>{
     event.addEventListener('click',(e)=>{
         e.target.classList.toggle('active');
@@ -38,6 +37,26 @@ sublinkMenu.forEach((event)=>{
     }
     })
 })
+
+function Visible(target) {
+    // Получаем позиции окна
+    windowPosition = {
+        top: window.scrollY,
+    };
+    
+    if ( windowPosition.top > target.height()) 
+    {
+        $('..header::before').css("background-color", "rgba(0,0,0,0.7)");
+    } else {
+        $('..header::before').css("background-color", "");
+    };
+};
+
+window.addEventListener('scroll', function(e) {
+    if (window.location.href.split('/')[4] != 'flower.html'){
+        Visible ($('.header'));
+    }
+});
 // function testWebP(callback) {
 //     var webP = new Image();
 //     webP.onload = webP.onerror = function () {
