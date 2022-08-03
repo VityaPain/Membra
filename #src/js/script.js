@@ -21,7 +21,7 @@ burger.addEventListener('click', (event) => {
         labelBurger.style.color = "#0F1693";
         labelBurger.style.fontFamily = "Centurygothic";
         labelBurger.style.fontSize = "16px";
-        labelBurger.style.marginLeft = "50px";
+        labelBurger.style.marginLeft = "40px";
     }
    
 });
