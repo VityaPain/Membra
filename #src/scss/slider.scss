@@ -12,21 +12,23 @@
 .slick-track{
     display: flex;
     justify-content: space-between;
+    padding: 20px 0;
 }
 
 /* Слайд */
 .slick-slide{
+    margin:0 20px;
+    @media (max-width:500px){margin: 0;}
 }
 /* Слайд активный (показывается) */
 .slick-slide.slick-active{
-    width: 305px !important;
+
 }
 /* Слайд основной */
 .slick-slide.slick-current{
 
 }
 .slick-slide.slick-current + .slick-slide.slick-active {
-    margin: 0px 118px;
 }
 /* Слайд по центру */
 .slick-slide.slick-center{
@@ -53,11 +55,13 @@
     left: 0;
     background: url("../img/linkArr.png") 100% 100%/cover no-repeat; 
     transform: rotate(180deg);
+    @media (max-width:600px){ left: 0; }
 }
 /* Стрелка вправо */
 .slick-arrow.slick-next{
     left: 150px;
-    background: url("../img/linkArr.png") center center/cover no-repeat; 
+    background: url("../img/linkArr.png") center center/cover no-repeat;
+    @media (max-width:600px){ right: 0%; left: auto;} 
 }
 /* Стрелка не активная */
 .slick-arrow.slick-disabled{}
