@@ -64,12 +64,25 @@ $(document).ready(function() {
     });
     // переключение табов
 });
-const links = document.querySelectorAll('.tabs__item');
+const links = document.querySelectorAll('.tabs__item'),
+    tabs = document.querySelectorAll('.tabs-block');
+
+let idLink = '';
+console.log(tabs[0].id);
 links.forEach((e) => {
     e.addEventListener('click', (event) => {
         event.preventDefault();
         links.forEach((ev) => {
             ev.classList.remove('active');
+        })
+        tabs.forEach((ev) => {
+            ev.classList.remove('active');
+        })
+        idLink = e.id;
+        tabs.forEach((e) => {
+            if (e.id == idLink) {
+                e.classList.add('active')
+            }
         })
         e.classList.add('active');
     })
