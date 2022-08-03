@@ -329,7 +329,7 @@ body{
         font-family: 'Candara';
         font-size: 18px;
     }
-    &:target {
+    &.active {
         display: flex;
     }
 }

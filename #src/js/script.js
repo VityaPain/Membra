@@ -64,6 +64,7 @@ $(document).ready(function() {
 const links = document.querySelectorAll('.tabs__item');
 links.forEach((e) => {
     e.addEventListener('click', (event) => {
+        event.preventDefault();
         links.forEach((ev) => {
             ev.classList.remove('active');
         })
