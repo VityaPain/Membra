@@ -31,7 +31,7 @@ body{
     flex-direction: column;
 }
 .container{
-    max-width: 1150px;
+    max-width: 1350px;
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: content-box;
@@ -61,7 +61,7 @@ body{
 
 //--------------------------------------------------Header---------------------------------------------------//
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,6 +95,7 @@ body{
     height: 50%;
     z-index: 1;
     background: linear-gradient(to bottom,rgba(15,22,147,0.6786064767703957), transparent);
+    background-color: #FAFAFA;
 }
 .border{
     z-index: 45;
@@ -129,12 +130,13 @@ body{
             &:first-child{
                 transform: rotate(-45deg);
                 top: 8px;
+                width: 70%;
             }
             &:nth-child(2){transform: scale(0);}
             &:nth-child(3){
                 transform: rotate(45deg);
                 bottom: 8px;
-                width: 100%;
+                width: 70%;
             }
         }
     }
@@ -154,7 +156,7 @@ body{
         position: relative;
         color: #0F1693;
         top: 1px;
-        margin-left: 50px;
+        margin-left: 40px;
         font-size: 16px;
     }
 }
@@ -167,6 +169,7 @@ body{
 .menu{
     overflow: auto;
     left: -120%; 
+    top: 0;
     transition: all ease 0.4s; 
     position: absolute;
     @media (max-width:425px){width: 100%;}
@@ -175,7 +178,6 @@ body{
 .menu.active {
     position: fixed;
     z-index: 50;
-    top: 0;
     left: 0;
     background-color: #0F1693;
     padding: 100px 40px 0;
@@ -248,7 +250,92 @@ body{
 
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Showcase-------------------------------------------------//
-
+.showcase {
+    position: relative;
+    padding-bottom: 40%;
+    @media (max-height:500px){padding-bottom: 60%;}
+    @media (max-height:425px){padding-bottom: 50%;}
+    @media (max-height:375px){padding-bottom: 45%;}
+    @media (max-width:1024px){
+        padding-bottom: 50%;
+    }
+    @media (max-width:767px){
+        padding-bottom: 60%;
+    }
+    @media (max-width:600px){
+        padding-bottom: 80%;
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__container{
+        @media(max-width:425px){
+            padding: 0;
+        }
+    }
+    &__block {
+        margin-top: -130px;
+        @media (max-width:900px){
+            margin-top: -100px;
+        }
+        @media (max-width:600px){
+            margin-top: -90px;
+        }
+        @media(max-width:425px){
+            margin-top: 0;
+        }
+        position: relative;
+        z-index: 2;
+    }
+    &__text {
+        @media (max-width:900px){
+            width: 70%;
+            padding: 30px;
+        }
+        @media (max-width:767px){
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width:600px){
+            padding: 20px;
+        }
+        @media(max-width:425px){
+            padding: 15px;
+        }
+        @media (max-height:375px){padding: 10px;}
+        padding: 40px;
+        background-color: #0F1693;
+        max-width: 700px;
+    }
+    &__title {
+        text-align: left;
+        @media (max-width:900px){
+            font-size: 24px;
+        }
+        @media (max-width:600px){
+            font-size: 20px;
+        }
+        margin-bottom: 20px;
+        line-height: calc(30/24*100%);
+        color: white;
+    }
+    &__sub-title {
+        font-family: 'Candara';
+        @media (max-width:900px){
+            font-size: 16px;
+        }
+        @media (max-width:600px){
+            font-size: 14px;
+        }
+        font-size: 18px;
+        color: white;
+        line-height: calc(30/18*100%);
+    }
+}
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Направления----------------------------------------------//
 .directions {
@@ -266,6 +353,7 @@ body{
     @media (max-width: 425px) {
         // align-items: center;
     }
+<<<<<<< HEAD
 
     &__body {
         height: 100%;
@@ -315,6 +403,8 @@ body{
     @media (max-width: 425px) {
         padding: 0px 0px 0px 0px;
     }
+=======
+>>>>>>> 738f667507d3cf018c38a657d7d881e1209873fb
 }
 .tabs {
     &__item {
