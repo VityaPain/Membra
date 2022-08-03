@@ -1,3 +1,7 @@
+function changeSize() {
+    console.log(1+1);
+}
+
 const burger = document.querySelector('.header-burger'),
       labelBurger = document.querySelector('.burger__label'),
       menuBurger = document.querySelector('.menu'),
@@ -50,25 +54,25 @@ sublinkMenu.forEach((event)=>{
     })
 })
 
-function Visible(target) {
-    // Получаем позиции окна
-    windowPosition = {
-        top: window.scrollY,
-    };
+// function Visible(target) {
+//     // Получаем позиции окна
+//     windowPosition = {
+//         top: window.scrollY,
+//     };
     
-    if ( windowPosition.top > target.height()) 
-    {
-        $('..header::before').css("background-color", "rgba(0,0,0,0.7)");
-    } else {
-        $('..header::before').css("background-color", "");
-    };
-};
+//     if ( windowPosition.top > target.height()) 
+//     {
+//         $('..header::before').css("background-color", "rgba(0,0,0,0.7)");
+//     } else {
+//         $('..header::before').css("background-color", "");
+//     };
+// };
 
-window.addEventListener('scroll', function(e) {
-    if (window.location.href.split('/')[4] != 'flower.html'){
-        Visible ($('.header'));
-    }
-});
+// window.addEventListener('scroll', function(e) {
+//     if (window.location.href.split('/')[4] != 'flower.html'){
+//         Visible ($('.header'));
+//     }
+// });
 $(document).ready(function() {
     // СЛАЙДЕР
     $('.news-slider').slick({
@@ -109,7 +113,7 @@ $(document).ready(function() {
         $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
     });
     // переключение табов
-
+    // $('body').resize(changeSize());
     //Плавный переход по якорной ссылке
     $('a[href^="#"].yakor').click(function(){ 
         let anchor = $(this).attr('href'); 
@@ -118,12 +122,16 @@ $(document).ready(function() {
         }, 600);               
     });
 });
+page = document.querySelector('body');
+page.addEventListener('resize', (e) => {
+    console.log(e);
+});
 const links = document.querySelectorAll('.tabs__item'),
-    linksNum = document.querySelectorAll('.directions-tabs__right .tabs__item'),
-    tabs = document.querySelectorAll('.tabs-block');
+    // linksNum = document.querySelectorAll('.tabs-descr__links .tabs__item'),
+    images = document.querySelectorAll('.tabs-images__photo'),
+    tabs = document.querySelectorAll('.tab-block');
 
 let idLink = '';
-console.log(tabs[0].id);
 links.forEach((e) => {
     e.addEventListener('click', (event) => {
         event.preventDefault();
@@ -133,17 +141,25 @@ links.forEach((e) => {
         tabs.forEach((ev) => {
             ev.classList.remove('active');
         })
+        images.forEach((ev) => {
+            ev.classList.remove('active');
+        })
         idLink = e.id;
         tabs.forEach((e) => {
             if (e.id == idLink) {
                 e.classList.add('active')
             }
         })
-        linksNum.forEach((e) => {
+        images.forEach((e) => {
             if (e.id == idLink) {
                 e.classList.add('active')
             }
         })
+        // linksNum.forEach((e) => {
+        //     if (e.id == idLink) {
+        //         e.classList.add('active')
+        //     }
+        // })
         e.classList.add('active');
     })
 })
