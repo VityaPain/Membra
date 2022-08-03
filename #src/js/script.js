@@ -1,7 +1,7 @@
 const burger = document.querySelector('.header-burger'),
       menuBurger = document.querySelector('.menu'),
       body = document.body,
-      sublinkMenu = document.querySelectorAll('.sub'),
+      sublinkMenu = document.querySelectorAll('.arrow'),
       menuLink = document.querySelectorAll('.item__link ');
 
 burger.addEventListener('click', (event) => {
@@ -16,9 +16,12 @@ sublinkMenu.forEach((event)=>{
         e.target.classList.toggle('active');
         if (e.target.classList.contains('active')){
             e.target.nextElementSibling.classList.add('active');
-            e.target.parentElement.children[2].classList.add('active');
+            e.target.previousElementSibling.classList.add('active');
+            // e.target.parentElement.children[2].classList.add('active');
         } else {e.target.nextElementSibling.classList.remove('active');
-        e.target.parentElement.children[2].classList.remove('active');}
+        // e.target.parentElement.children[2].classList.remove('active');}
+        e.target.previousElementSibling.classList.remove('active');
+    }
     })
 })
 // function testWebP(callback) {
