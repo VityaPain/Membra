@@ -129,12 +129,13 @@ body{
             &:first-child{
                 transform: rotate(-45deg);
                 top: 8px;
+                width: 70%;
             }
             &:nth-child(2){transform: scale(0);}
             &:nth-child(3){
                 transform: rotate(45deg);
                 bottom: 8px;
-                width: 100%;
+                width: 70%;
             }
         }
     }

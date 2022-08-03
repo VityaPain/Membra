@@ -1,4 +1,5 @@
 const burger = document.querySelector('.header-burger'),
+      labelBurger = document.querySelector('.burger__label'),
       menuBurger = document.querySelector('.menu'),
       body = document.body,
       sublinkMenu = document.querySelectorAll('.arrow'),
@@ -7,7 +8,22 @@ const burger = document.querySelector('.header-burger'),
 burger.addEventListener('click', (event) => {
     burger.classList.toggle('active');
     menuBurger.classList.toggle('active');
-    body.classList.toggle('lock');
+    if (burger.classList.contains('active')){
+        setTimeout(()=>{
+            labelBurger.textContent = 'Закрыть';
+            labelBurger.style.color = "white";
+            labelBurger.style.fontFamily = "Canrara";
+            labelBurger.style.fontSize = "16";
+            labelBurger.style.marginLeft = "35px";
+        }, 200)
+    } else {
+        labelBurger.textContent = 'Меню';
+        labelBurger.style.color = "#0F1693";
+        labelBurger.style.fontFamily = "Centurygothic";
+        labelBurger.style.fontSize = "16px";
+        labelBurger.style.marginLeft = "50px";
+    }
+   
 });
 
 
@@ -17,9 +33,7 @@ sublinkMenu.forEach((event)=>{
         if (e.target.classList.contains('active')){
             e.target.nextElementSibling.classList.add('active');
             e.target.previousElementSibling.classList.add('active');
-            // e.target.parentElement.children[2].classList.add('active');
         } else {e.target.nextElementSibling.classList.remove('active');
-        // e.target.parentElement.children[2].classList.remove('active');}
         e.target.previousElementSibling.classList.remove('active');
     }
     })
