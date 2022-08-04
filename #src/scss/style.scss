@@ -1,12 +1,12 @@
 //--------------------------------------------------Миксины-----------------------------------------------//
-@mixin font($font_name, $file_name, $weight, $style) {
+@mixin font($font_name, $file_name, $weight, $style){
     @font-face {
         font-family: $font_name;
         font-display: swap;
         src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
         font-weight: #{$weight};
         font-style: #{$style};
-    }    
+    }
 }
 //--------------------------------------------------------------------------------------------------------//
 
@@ -18,9 +18,9 @@
 
 //--------------------------------------------------Общие стили-------------------------------------------//
 body{
+    background-color: #f7f7f7;
     height: 100%;
     font-family: "Centurygothic";
-    background-color: #FAFAFA;
 }
 .wrapper{
     position: relative;
@@ -31,7 +31,7 @@ body{
     flex-direction: column;
 }
 .container{
-    max-width: 1350px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: content-box;
@@ -90,19 +90,22 @@ body{
     }
 }
 .header::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    z-index: 1;
-    background: linear-gradient(to bottom, white, transparent);
+    // content: '';
+    // position: absolute;
+    // top: -20px;
+    // left: 0;
+    // width: 100%;
+    // height: 45.8%;
+    // z-index: 1;
+    // background-color: #eeeeee;
+    // background: linear-gradient(180deg, #ddd, #fff);
+    // // box-shadow: 0px 2px 15px #17213c;
+    // box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 .border{
     z-index: 45;
-    &__after {width: 60%; background-color: #2e3e88;; height: 2px; @media (max-width:767px){width: 50%;}}
-    &__before{width: 30%; background-color: #2e3e88;; height: 2px; @media (max-width:767px){width: 50%;}}
+    &__after {width: 60%; background-color: #2e3e88; height: 1px; @media (max-width:767px){width: 50%;}}
+    &__before{width: 30%; background-color: #2e3e88; height: 1px; @media (max-width:767px){width: 50%;}}
     .header-logo{
         a{display:flex; justify-content: center; align-items: center;}
         transform: translateY(-50%);
@@ -182,6 +185,7 @@ body{
     z-index: 50;
     left: 0;
     background-color: #1d294a;
+    background: linear-gradient(45deg,#17213c , #2e3e88);
     padding: 100px 40px 0;
     height: 100vh;
     transition: all ease 0.4s;
@@ -309,7 +313,8 @@ body{
         }
         @media (max-height:375px){padding: 10px;}
         padding: 35px;
-        background-color: rgba(46,62,136,0.95);
+        background: linear-gradient(45deg,#17213c , #2e3e88);
+        box-shadow: 0px 5px 10px #17213c;
         max-width: 700px;
     }
     &__title {
@@ -365,8 +370,76 @@ body{
 }
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Направления----------------------------------------------//
+.directions-tabs {
+    &__body-row {
+        display: none;
+    }
+    &__body-row.active {
+        box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        @media (max-width: 900px){flex-direction: column-reverse;}
+        img{animation: showBlock 0.8s linear forwards;}
+    }
+}
+.row {
+    &__image {
+        box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+        flex: 0 0 50%;
+        &-link{
+            overflow: hidden;
+            display: block;
+            height: 100%;
+            position: relative;
+            @media (max-width: 900px){padding-bottom: 50%; height: auto;}
+            @media (max-width: 767px){padding-bottom: 70%; height: auto;}
+            span{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                img{transition: all ease 0.4s;}
+                img:hover{
+                    transition: all ease 0.4s;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    &__block {
+        padding: 30px 15px 15px 70px;
+        @media (max-width: 900px){padding: 40px 15px 40px; }
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title:not(:last-child) {margin: 0 0 20px 0;}
+    &__title {
+        text-align: left;
+        font-size: 36px;
+    }
+    &__text {
+        p:not(:last-child){margin-bottom: 15px;}
+        flex: 1 1 auto;
+        color: #2e3e88;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        line-height: 130%;
+    }
+
+    &__link {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: calc(28 / 16 * 100%);
+        letter-spacing: 0.2px;
+        color:#1d294a;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}
 
 .directions {
+    @media (max-width:900px){padding: 70px 0px 50px;}
+    @media (max-width:600px){padding: 40px 0px 40px;}
     padding: 130px 0px 70px;
 }
 .directions-tabs {
@@ -374,161 +447,32 @@ body{
     flex-direction: column;
     &__nav {
         display: flex;
-    }
-
-    &__body {
-        display: flex;
-        @media (max-width: 900px) {
-            flex-direction: column-reverse;
+        @media (max-width: 500px) {
+            overflow: auto;
         }
     }
 }
 .tabs {
-
     &__item {
-        flex: 0 1 33.3333%;
+        @media(max-width:500px){flex: 0 0 300px;}
+        flex: 0 0 33.3333%;
         text-align: center;
         color:#2e3e88;
         letter-spacing: 1px;
-        padding: 15px 0px;
+        padding: 15px 15px;
         line-height: 150%;
-        border-bottom:#2e3e88 1px solid;
+        border-bottom:rgba(29,41,74,0.3) 1px solid;
         &.active {
             background-color:#2e3e88;
+            background: linear-gradient(45deg,#17213c , #2e3e88);
             color: white;
         }
         &:nth-child(2) {
-            border-left:#0F1693 1px solid;
-            border-right:#0F1693 1px solid;
-        }
-        @media (max-width: 767px) {
-            display: none;
+            border-left:rgba(29,41,74,0.3) 1px solid;
+            border-right:rgba(29,41,74,0.3) 1px solid;
         }
     }
 }
-.tabs-images {
-    flex: 0 1 50%;
-    &__photo {
-        display: none;
-        &.active {
-            display: block;
-            padding-bottom: 45%;
-            animation: showBlock 2s linear forwards;
-        }
-    }
-}
-.tabs-text {
-    // flex: 1 1 auto;
-    display: flex;
-    flex: 0 1 50%;
-    &__descr {
-        flex: 1 1 auto;
-        @media (max-width: 767px) {
-            flex: 0 1 90%;
-        }
-    }
-    @media (max-width: 767px) {
-        padding-bottom: 10px;
-    }
-
-    &__links {
-        display: none;
-        color: black;
-        @media (max-width: 767px) {
-            display: flex;
-            flex-direction: column;
-            flex: 0 1 10%;
-        }
-    }
-}
-@media (max-width: 767px) {
-    .tabs-text__links .tabs__item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color:#0F1693;
-        line-height: 150%;
-        border-left:#0F1693 1px solid;
-        border-bottom: 0;
-        padding: 0 !important;
-        // align-self: center;
-        &.active {
-            background-color:#0F1693;
-            color: white;
-        }
-        &:nth-child(2) {
-            // border-left:#0F1693 1px solid;
-            border-bottom:#0F1693 1px solid;
-            border-top:#0F1693 1px solid;
-            border-right:0;
-        }
-    }
-}
-.tab-block {
-    display: none;
-    &__title {
-        color:#0F1693;
-        font-size: 30px;
-        line-height: 150%;
-        padding: 0px 0px 10px;
-        letter-spacing: 1px;
-        @media (max-width: 900px) {
-            padding: 0px 0px 5px;
-        }
-        @media (max-width: 425px) {
-            font-size: 26px;
-        }
-    }
-
-    &__descr {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 18px;
-        line-height: 130%;
-        padding: 0px 0px 10px;
-        @media (max-width: 900px) {
-            font-size: 17px;
-        }
-        @media (max-width: 600px) {
-            font-size: 16px;
-        }
-        @media (max-width: 425px) {
-            font-size: 14px;
-            line-height: 125%;
-        }
-    }
-
-    &__link {
-        color:#0F1693;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 18px;
-        @media (max-width: 900px) {
-            font-size: 17px;
-        }
-        @media (max-width: 600px) {
-            font-size: 16px;
-        }
-    }
-    &.active {
-        display: flex;
-        flex-direction: column;
-        padding: 60px 40px 0px;
-        flex: 1 1 auto;
-        @media (max-width: 900px) {
-            padding: 20px 30px 10px 0px;
-        }
-        @media (max-width: 767px) {
-            padding: 0px 30px 10px 0px;
-        }
-        @media (max-width: 600px) {
-            padding: 0px 10px 0px 0px;
-        }
-        @media (max-width: 425px) {
-            padding: 0px 5px 0px 0px;
-        }
-    }
-}
-
-
 @keyframes showBlock {
     0% {
       opacity: 0;
@@ -545,6 +489,10 @@ body{
 //--------------------------------------------------Лозунг---------------------------------------------------//
 .slogan {
     background-color: #1d294a;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 5px 10px #17213c;
+    background: linear-gradient(45deg,#17213c , #2e3e88);
     padding: 60px 0;
     &__title:not(:last-child){margin-bottom: 30px;}
     &__title {

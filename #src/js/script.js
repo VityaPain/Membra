@@ -64,25 +64,6 @@ sublinkMenu.forEach((event)=>{
     })
 })
 
-// function Visible(target) {
-//     // Получаем позиции окна
-//     windowPosition = {
-//         top: window.scrollY,
-//     };
-    
-//     if ( windowPosition.top > target.height()) 
-//     {
-//         $('..header::before').css("background-color", "rgba(0,0,0,0.7)");
-//     } else {
-//         $('..header::before').css("background-color", "");
-//     };
-// };
-
-// window.addEventListener('scroll', function(e) {
-//     if (window.location.href.split('/')[4] != 'flower.html'){
-//         Visible ($('.header'));
-//     }
-// });
 $(document).ready(function() {
     // СЛАЙДЕР
     $('.news-slider').slick({
@@ -131,20 +112,11 @@ $(document).ready(function() {
         }, 600);               
     });
 });
-
-
-// page = document.querySelector('body');
-// page.addEventListener('resize', (e) => {
-//     console.log(e);
-// });
-// console.log(2);
 window.addEventListener("resize", myFunction);
-
 
 const links = document.querySelectorAll('.tabs__item'),
     // linksNum = document.querySelectorAll('.tabs-descr__links .tabs__item'),
-    images = document.querySelectorAll('.tabs-images__photo'),
-    tabs = document.querySelectorAll('.tab-block');
+    tabs = document.querySelectorAll('.directions-tabs__body-row');
 
 let idLink = '';
 links.forEach((e) => {
@@ -156,16 +128,8 @@ links.forEach((e) => {
         tabs.forEach((ev) => {
             ev.classList.remove('active');
         })
-        images.forEach((ev) => {
-            ev.classList.remove('active');
-        })
         idLink = e.id;
         tabs.forEach((e) => {
-            if (e.id == idLink) {
-                e.classList.add('active')
-            }
-        })
-        images.forEach((e) => {
             if (e.id == idLink) {
                 e.classList.add('active')
             }
