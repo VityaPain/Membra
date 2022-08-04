@@ -67,7 +67,9 @@
     @media (max-width:600px){ right: 0%; left: auto;} 
 }
 /* Стрелка не активная */
-.slick-arrow.slick-disabled{}
+.slick-arrow.slick-disabled {
+    display: none !important;
+}
 
 /* Точки (булиты) */
 .categories-slider .slick-dots {

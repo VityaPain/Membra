@@ -1,12 +1,14 @@
 let len = 0
     step = 1;
+
 function myFunction() {
+    $('.step').remove();
     if (window.innerWidth > 900) {
         len = $('.news-slider__item').length/3;
     } else {
         len = $('.news-slider__item').length/2;
     }
-    $('.step').remove();
+    // $('.step').remove();
     $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
 }
 
@@ -95,21 +97,30 @@ $(document).ready(function() {
             }
         ]
     });
-    // Подсчет шагов в слайдере
+    
     myFunction();
-    $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
+    // window.addEventListener("resize", myFunction);
+
+    $(window).resize(myFunction);
+
+
+    // Подсчет шагов в слайдере
     $('.slick-arrow').click(function() {
+        myFunction();
+        // console.log('click');
         $('.step').remove();
-        if ($(this).hasClass('slick-next') && step < len) {
+        $('.step .slick-slide .slick-current .slick-active').remove();
+        if ($(this).hasClass('slick-next')) {
             step+=1;
         }
-        if ($(this).hasClass('slick-prev') && step > 1) {
+        if ($(this).hasClass('slick-prev')) {
             step-=1;
         }
         $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
     });
-    // переключение табов
-    // $('body').resize(changeSize());
+
+
+
     //Плавный переход по якорной ссылке
     $('a[href^="#"].yakor').click(function(){ 
         let anchor = $(this).attr('href'); 
@@ -118,10 +129,9 @@ $(document).ready(function() {
         }, 600);               
     });
 });
-window.addEventListener("resize", myFunction);
+
 
 const links = document.querySelectorAll('.tabs__item'),
-    // linksNum = document.querySelectorAll('.tabs-descr__links .tabs__item'),
     tabs = document.querySelectorAll('.directions-tabs__body-row');
 
 let idLink = '';
@@ -140,11 +150,6 @@ links.forEach((e) => {
                 e.classList.add('active')
             }
         })
-        // linksNum.forEach((e) => {
-        //     if (e.id == idLink) {
-        //         e.classList.add('active')
-        //     }
-        // })
         e.classList.add('active');
     })
 })
