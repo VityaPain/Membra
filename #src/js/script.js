@@ -64,6 +64,12 @@ sublinkMenu.forEach((event)=>{
     })
 })
 
+//Скролл оффера
+document.addEventListener('scroll',()=>{
+
+})
+
+
 $(document).ready(function() {
     // СЛАЙДЕР
     $('.news-slider').slick({
