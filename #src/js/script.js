@@ -8,7 +8,6 @@ function myFunction() {
     } else {
         len = $('.news-slider__item').length/2;
     }
-    // $('.step').remove();
     $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
 }
 
@@ -80,6 +79,7 @@ $(document).ready(function() {
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
+        speed: 1100,
         responsive:[
             {
                 breakpoint: 900,
