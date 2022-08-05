@@ -45,7 +45,7 @@ burger.addEventListener('click', (event) => {
         }, 200)
     } else {
         labelBurger.textContent = 'Меню';
-        labelBurger.style.color = "#0F1693";
+        labelBurger.style.color = "#2e3e88";
         labelBurger.style.fontFamily = "Centurygothic";
         labelBurger.style.fontSize = "16px";
         labelBurger.style.marginLeft = "40px";
