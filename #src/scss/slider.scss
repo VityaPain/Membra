@@ -57,14 +57,14 @@
 /* Стрелка влево */
 .slick-arrow.slick-prev{
     left: 0;
-    background: url("../img/linkArr.png") 100% 100%/cover no-repeat; 
+    background: url("../img/arr.svg") 100% 100%/cover no-repeat; 
     transform: rotate(180deg);
     @media (max-width:600px){ left: 0; }
 }
 /* Стрелка вправо */
 .slick-arrow.slick-next{
     left: 150px;
-    background: url("../img/linkArr.png") center center/cover no-repeat;
+    background: url("../img/arr.svg") 100% 100%/cover no-repeat; 
     @media (max-width:600px){ right: 0%; left: auto;} 
 }
 /* Стрелка не активная */
