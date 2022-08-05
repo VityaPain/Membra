@@ -625,7 +625,8 @@ section{
     }
     &__line {
         width: 100%;
-        height: 1px;
+        height: 0.5px;
+        opacity: 0.6;
         background-color: #1d294a;
     }
     &__date {
