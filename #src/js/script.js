@@ -65,11 +65,16 @@ sublinkMenu.forEach((event)=>{
     })
 })
 
-//Скролл оффера
-document.addEventListener('scroll',()=>{
 
-})
-
+// //Скролл оффера
+// window.addEventListener('scroll', function() {
+//     var distanceScrolled = window.scrollTop;
+//     var h = document.getElementById('showcase').offsetHeight;
+//     var offer = this.document.getElementById('block');
+//     while (distanceScrolled < h) {
+//         console.log(document.getElementById('block').style.marginTop)
+//     }
+// })
 
 $(document).ready(function() {
     // СЛАЙДЕР
