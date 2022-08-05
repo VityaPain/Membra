@@ -60,6 +60,20 @@ body{
     text-align: center;
 
 }
+.link-more{
+    width: fit-content;
+    padding: 10px 10px 10px 0;
+    margin-top: 40px;
+    display: block;
+    font-size: 16px;
+    color: #17213c;
+    line-height: calc(30 / 16 * 100%);
+    span {
+        display: inline-block;
+        width: 40px;
+        img{width: 100%; vertical-align: middle;}
+    }
+}
 //-----------------------------------------------------------------------------------------------------------//
 
 //--------------------------------------------------Header---------------------------------------------------//
@@ -111,7 +125,7 @@ body{
         transform: translateY(-50%);
         margin: 0 15px;
         @media (max-width:767px){min-width:120px}
-        width: 250px;
+        width: 300px;
         img{width: 100%; height: 100%;}
     }
 }
@@ -439,7 +453,7 @@ body{
 .directions {
     @media (max-width:900px){padding: 70px 0px 50px;}
     @media (max-width:600px){padding: 40px 0px 40px;}
-    padding: 130px 0px 70px;
+    padding: 130px 0px 100px;
 }
 .directions-tabs {
     display: flex;
@@ -483,7 +497,69 @@ body{
 
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Технологии-----------------------------------------------//
-
+.technologies {
+    padding: 40px 0 100px 0;
+    &__row:not(:last-child){margin-bottom: 70px;}
+    &__row {
+        display: flex;
+    }
+    &__row:nth-child(even) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+.row-technologies {
+    &__image {
+        flex: 0 0 55%;
+        box-shadow:  0px 3px 10px rgba(23,33,60,0.8);
+    }
+    &__link {
+        display: block;
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+        @media (max-width: 900px){padding-bottom: 50%; height: auto;}
+        @media (max-width: 767px){padding-bottom: 70%; height: auto;}
+        span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            img{transition: all ease 0.8s;}
+            img:hover{
+                transition: all ease 0.8s;
+                transform: scale(1.1);
+            }
+        }
+    }
+    &__text.active{
+        background-color: white;
+        box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+        transition: all ease 0.8s;
+    }
+    &__text {
+        transition: all ease 0.8s;
+        // min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        padding: 70px 15px 70px 70px;
+        color: #2e3e88;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: calc(30/24*100%);
+        margin-bottom: 20px;
+    }
+    &__content {
+        flex: 1 1 auto;
+        & > *:not(:last-child){margin-bottom: 10px;}
+        p{
+            font-size: 16px;
+            line-height: calc(30/24*100%);
+        }
+    }
+}
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Лозунг---------------------------------------------------//
 .slogan {
@@ -511,7 +587,7 @@ body{
     width: 100%;
     @media (max-width:900px){padding: 70px 0px 50px;}
     @media (max-width:600px){padding: 40px 0px 40px;}
-    padding: 130px 0px 50px;
+    padding: 130px 0px 100px;
     &__link{
         display: block;
         color: #2e3e88;
@@ -538,11 +614,16 @@ body{
     }
 }
 .card {
+    &__text{
+        // flex: 1 1 auto;
+    }
     &__title {
         font-size: 19px;
         line-height: 150%;
         padding: 0px 0px 5px;
-        // color: #17213c;
+        // overflow:hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
         color: #1d294a;
     }
     &__line {

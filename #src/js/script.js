@@ -17,7 +17,8 @@ const burger = document.querySelector('.header-burger'),
       body = document.body,
       sublinkMenu = document.querySelectorAll('.arrow'),
       menuLink = document.querySelectorAll('.item__link '),
-      cardLink = document.querySelectorAll('.card__link');
+      cardLink = document.querySelectorAll('.card__link'),
+      linkMore = document.querySelectorAll('.row-technologies__link-more');
 
 cardLink.forEach(element => {
     element.addEventListener('mouseover',(e)=>{
@@ -52,7 +53,6 @@ burger.addEventListener('click', (event) => {
    
 });
 
-
 sublinkMenu.forEach((event)=>{
     event.addEventListener('click',(e)=>{
         e.target.classList.toggle('active');
@@ -65,16 +65,19 @@ sublinkMenu.forEach((event)=>{
     })
 })
 
+linkMore.forEach((event)=>{
+    event.addEventListener('mouseover',(e)=>{
+        e.target.classList.add('active');
+        if (e.target.classList.contains('active')){
+            e.target.parentNode.classList.add('active');
+        }
+    })
+    event.addEventListener('mouseout',(e)=>{
+        e.target.classList.remove('active');
+        e.target.parentNode.classList.remove('active');
+    })
+})
 
-// //Скролл оффера
-// window.addEventListener('scroll', function() {
-//     var distanceScrolled = window.scrollTop;
-//     var h = document.getElementById('showcase').offsetHeight;
-//     var offer = this.document.getElementById('block');
-//     while (distanceScrolled < h) {
-//         console.log(document.getElementById('block').style.marginTop)
-//     }
-// })
 
 $(document).ready(function() {
     // СЛАЙДЕР
@@ -123,8 +126,6 @@ $(document).ready(function() {
         }
         $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
     });
-
-
 
     //Плавный переход по якорной ссылке
     $('a[href^="#"].yakor').click(function(){ 
