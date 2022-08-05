@@ -63,16 +63,24 @@ body{
 .link-more{
     width: fit-content;
     padding: 10px 10px 10px 0;
+    @media (max-width: 600px){margin-top: 20px;}
     margin-top: 40px;
     display: block;
     font-size: 16px;
-    color: #17213c;
-    line-height: calc(30 / 16 * 100%);
+    line-height: calc(28 / 16 * 100%);
+    letter-spacing: 0.7px;
+    color:#1d294a;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     span {
         display: inline-block;
         width: 40px;
         img{width: 100%; vertical-align: middle;}
     }
+}
+section{
+    padding: 130px 0 70px;
+    @media (max-width:900px){padding: 70px 0px 50px !important;}
+    @media (max-width:600px){padding: 40px 0px 40px !important;}
 }
 //-----------------------------------------------------------------------------------------------------------//
 
@@ -443,16 +451,9 @@ body{
 
     &__link {
         margin-top: 30px;
-        font-size: 16px;
-        line-height: calc(28 / 16 * 100%);
-        letter-spacing: 0.2px;
-        color:#1d294a;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 }
 .directions {
-    @media (max-width:900px){padding: 70px 0px 50px;}
-    @media (max-width:600px){padding: 40px 0px 40px;}
     padding: 130px 0px 100px;
 }
 .directions-tabs {
@@ -499,11 +500,13 @@ body{
 //--------------------------------------------------Технологии-----------------------------------------------//
 .technologies {
     padding: 40px 0 100px 0;
-    &__row:not(:last-child){margin-bottom: 70px;}
+    &__row:not(:last-child){margin-bottom: 70px; @media (max-width: 500px){margin-bottom: 30px;}}
     &__row {
         display: flex;
+        @media (max-width:900px){flex-direction: column-reverse;}
     }
     &__row:nth-child(even) {
+        @media (max-width:900px){flex-direction: column-reverse;}
         display: flex;
         flex-direction: row-reverse;
     }
@@ -518,8 +521,8 @@ body{
         overflow: hidden;
         height: 100%;
         position: relative;
-        @media (max-width: 900px){padding-bottom: 50%; height: auto;}
-        @media (max-width: 767px){padding-bottom: 70%; height: auto;}
+        @media (max-width: 900px){padding-bottom: 40%; height: auto;}
+        @media (max-width: 767px){padding-bottom: 50%; height: auto;}
         span{
             position: absolute;
             width: 100%;
@@ -540,10 +543,10 @@ body{
     }
     &__text {
         transition: all ease 0.8s;
-        // min-height: 320px;
         display: flex;
         flex-direction: column;
         padding: 70px 15px 70px 70px;
+        @media (max-width:900px){padding: 0px 15px 20px;}
         color: #2e3e88;
     }
     &__title {
@@ -569,6 +572,7 @@ body{
     box-shadow: 0px 5px 10px #17213c;
     background: linear-gradient(45deg,#17213c , #2e3e88);
     padding: 60px 0;
+    @media (max-width:900px){ margin: 40px 0;}
     &__title:not(:last-child){margin-bottom: 30px;}
     &__title {
         color: white;
@@ -585,12 +589,11 @@ body{
 //--------------------------------------------------Новости и события----------------------------------------//
 .news {
     width: 100%;
-    @media (max-width:900px){padding: 70px 0px 50px;}
-    @media (max-width:600px){padding: 40px 0px 40px;}
-    padding: 130px 0px 100px;
+    padding: 130px 0px 50px;
     &__link{
         display: block;
         color: #2e3e88;
+        @media (max-width: 600px){margin: 30px auto 0;}
         margin: 50px auto 0;
         width: fit-content;
         padding: 2px 10px;
@@ -610,20 +613,14 @@ body{
         display: flex;
         flex-direction: column;
         box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-        padding: 20px;
+        padding: 20px 20px 5px 20px;
     }
 }
 .card {
-    &__text{
-        // flex: 1 1 auto;
-    }
     &__title {
         font-size: 19px;
         line-height: 150%;
         padding: 0px 0px 5px;
-        // overflow:hidden;
-        // text-overflow: ellipsis;
-        // white-space: nowrap;
         color: #1d294a;
     }
     &__line {
@@ -631,11 +628,10 @@ body{
         height: 1px;
         background-color: #1d294a;
     }
-
     &__date {
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 12px;
-        padding: 5px 0px 20px;
+        padding: 10px 0px 20px;
         color: #1d294a;
         opacity: 0.7;
     }
@@ -652,21 +648,7 @@ body{
         padding-bottom: 58%;
     }
     &__link {
-        // font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        // font-size: 14px;
-        // color: #1d294a;
-        // position: relative;
-        // padding: 20px 0px 0px;
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     left: 75px;
-        //     top: 18px;
-        //     z-index: 10000000;
-        //     width: 30px;
-        //     height: 20px;
-        //     background: url('../img/arr.svg') center center/cover no-repeat;
-        // }
+        margin-top: 15px;
     }
 }
 //-----------------------------------------------------------------------------------------------------------//
@@ -674,6 +656,7 @@ body{
 .footer {
     width: 100%;
     padding: 20px 0px;
+    @media (max-width:767px){padding: 40px 0px 20px 0;}
     background-color: #eeeeee;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     & span {
@@ -681,18 +664,52 @@ body{
         display: block;
         text-align: center;
         color: #2e3e88;
-        letter-spacing: 0.5px
+        letter-spacing: 0.5px;
+        font-family:'Candara';
+        margin-top:20px
+    }
+    &-container{
+        @media(max-width:500px){padding: 0 70px;}
+        @media(max-width:400px){padding: 0 40px;}
+        @media(max-width:345px){padding: 0 15px;}
     }
 }
 .footer-row {
     display: flex;
+    @media (max-width:767px){flex-direction: column;}
     justify-content: space-between;
     align-items: center;
-    // Если правильно помню, ты говорил, что стараться не мешать паддинги и маржины, поэтому отспут так сделал
+    &__item:first-child{
+        @media (max-width:767px){order: 4;}
+    }
+    &__item:not(:first-child){
+        @media (max-width:767px){width: 100%;}
+    }
+    &__item:last-child{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1 1 auto;
+        justify-content: space-around;
+        @media (max-width:500px){flex-direction: column;}
+    }
+    &__block{
+        display: flex;
+        flex-direction: column; 
+        @media (max-width:500px){flex-direction: row; width: 100%; justify-content: space-between; & > *{margin-bottom: 20px;};}
+    }
     &__item {
+        display: flex;
+        flex-direction: column;
+        a.item__logo{margin-bottom: 0;}
         font-size: 18px;
         letter-spacing: 1.5px;
+        & a:not(:last-child){
+            @media (max-width:767px){width: fit-content;}
+        }
         a {
+            margin-bottom: 15px;
+            @media (max-width:500px){margin-bottom: 0px}
             display: block;
             width: 200px;
             color: #2e3e88;
@@ -701,16 +718,19 @@ body{
             }
             img{width: 100%; height: 100%;}
         }
-        // &:not(:first-child) {
-        //     align-self: center;
-        //     // margin-bottom: -5px;
-        // }
     }
     &__list {
-        // margin-bottom: -5px;
-        font-size: 15px;
-        opacity: 0.7;
-        letter-spacing:normal;
+        & li:not(:last-child){
+            margin-bottom: 5px;
+            @media(max-width:500px){margin-bottom: 10px;}
+        }
+        li {
+            line-height: 130%;
+            font-family: 'Candara';
+            font-size: 14px;
+            opacity: 0.7;
+            letter-spacing:normal;
+        }
     }
 }
 //-----------------------------------------------------------------------------------------------------------//
