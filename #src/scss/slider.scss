@@ -43,6 +43,7 @@
     z-index: 20;
     width: 55px;
     height: 30px;
+    animation: showBlock 0.8s linear forwards;
 }
 .step {
     position: absolute;
@@ -67,7 +68,9 @@
     @media (max-width:600px){ right: 0%; left: auto;} 
 }
 /* Стрелка не активная */
-.slick-arrow.slick-disabled{}
+.slick-arrow.slick-disabled {
+    display: none !important;
+}
 
 /* Точки (булиты) */
 .categories-slider .slick-dots {
