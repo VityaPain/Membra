@@ -155,7 +155,8 @@ $(document).ready(function() {
                 settings:{
                     swipe: true,
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    speed: 700
                 }
             }
         ]
