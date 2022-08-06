@@ -67,34 +67,43 @@ burger.addEventListener('click', (event) => {
     die.classList.toggle('active');
     if (burger.classList.contains('active')){
         setTimeout(()=>{
-            labelBurger.textContent = 'Закрыть';
-            labelBurger.style.color = "white";
-            labelBurger.style.fontFamily = "Canrara";
-            labelBurger.style.fontSize = "16";
-            labelBurger.style.paddingLeft = "35px";
+            addStyleLabelMenu()
         }, 200)
     } else {
-        labelBurger.textContent = 'Меню';
-        labelBurger.style.color = "#2e3e88";
-        labelBurger.style.fontFamily = "Centurygothic";
-        labelBurger.style.fontSize = "16px";
-        labelBurger.style.paddingLeft = "40px";
+        removeStyleLabelMenu()
     }
 });
 
+function addStyleLabelMenu(){
+    labelBurger.textContent = 'Закрыть';
+    labelBurger.style.color = "white";
+    labelBurger.style.fontFamily = "Canrara";
+    labelBurger.style.fontSize = "16px";
+    labelBurger.style.paddingLeft = "35px";
+}
+function removeStyleLabelMenu(){
+    labelBurger.textContent = 'Меню';
+    labelBurger.style.color = "#2e3e88";
+    labelBurger.style.fontFamily = "Centurygothic";
+    labelBurger.style.fontSize = "16px";
+    labelBurger.style.paddingLeft = "40px";
+}
 die.addEventListener('click',(i)=> {
     die.classList.remove('active');
     burger.classList.remove('active');
     menuBurger.classList.remove('active');
+    body.classList.remove('lock');
+    removeStyleLabelMenu();
 })
 $(document).keydown(function(e) {
     if (e.code === 'Escape') {
         die.classList.remove('active');
         burger.classList.remove('active');
-        menuBurger.classList.remove('active')
+        menuBurger.classList.remove('active');
+        body.classList.remove('lock');
+        removeStyleLabelMenu();
     }
 })
-
 
 sublinkMenu.forEach((event)=>{
     event.addEventListener('click',(e)=>{
