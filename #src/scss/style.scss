@@ -22,6 +22,7 @@ body{
     height: 100%;
     font-family: "Centurygothic";
 }
+body.lock{overflow: hidden;}
 .wrapper{
     position: relative;
     overflow: hidden;
@@ -49,6 +50,7 @@ body{
 }
 .main{
     flex: 1 1 auto;
+    position: relative;
 }
 .title{
     @media (max-width:600px){ margin: 0 auto 30px;}
@@ -82,9 +84,36 @@ section{
     @media (max-width:900px){padding: 70px 0px 50px !important;}
     @media (max-width:600px){padding: 40px 0px 40px !important;}
 }
+.die{
+    @media (max-width:425px){display: none;}
+    right: 0%; 
+    top: -120%;
+    transition: all ease 0.4s 0.2s; 
+    position: absolute;
+}
+.die.active{
+    @media (max-width:425px){display: none;}
+    transition: all ease 0.4s 0.2s; 
+    z-index: 2;
+    top: 0;
+    width: calc(100% - 400px);
+    height: 100%;
+    background-color: #17213c;
+    opacity: 0.5;
+}
 //-----------------------------------------------------------------------------------------------------------//
 
 //--------------------------------------------------Header---------------------------------------------------//
+.header.active {
+    background: linear-gradient(45deg,#17213c , #2e3e88);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    .header__container {
+        @media(max-width:600px){height: 55px;}
+        background-color: transparent;
+        box-shadow: none;
+        .header-tel a{color: white !important;}
+    }
+}
 .header {
     position: fixed;
     top: 0;
@@ -92,7 +121,8 @@ section{
     width: 100%;
     z-index: 50;
     &__container {
-        @media (max-width:600px){height: 50px; padding: 0 15px;}
+        background-color: rgba(26, 57, 167, 0.3);
+        @media (max-width:600px){height: 70px; padding: 0 15px;}
         height: 70px;
         position: relative;
         display: flex;
@@ -100,41 +130,30 @@ section{
         align-items: center;
         max-width: 100%;
         padding: 0 40px;
-    }
-    &__border{
-        @media (max-width:425px){bottom: -20px;}
-        position: relative;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+        box-shadow: 0px 2px 10px rgba(26, 57, 167, 0.6);
     }
 }
-// .header::before{
-//     // content: '';
-//     // position: absolute;
-//     // top: -20px;
-//     // left: 0;
-//     // width: 100%;
-//     // height: 45.8%;
-//     // z-index: 1;
-//     // background-color: #eeeeee;
-//     // background: linear-gradient(180deg, #ddd, #fff);
-//     // // box-shadow: 0px 2px 15px #17213c;
-//     // box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-// }
+.border.active{
+    transition: all ease 0.4s;
+    display: none;
+}
 .border{
+    transition: all ease 0.4s;
+    display: flex;
+    align-items: center;
+    margin-top: -76px;
+    @media (max-width:767px){margin-top: -55px;}
+    @media (max-width:600px){margin-top: -55px;}
     z-index: 45;
-    &__after {width: 60%; background-color: #2e3e88; height: 1px; @media (max-width:767px){width: 50%;}}
-    &__before{width: 30%; background-color: #2e3e88; height: 1px; @media (max-width:767px){width: 50%;}}
+    &__after {width: 50%; background-color: #2e3e88; height: 1px; @media (max-width:767px){width: 50%;};@media (max-width:500px){width: 100%;}}
+    &__before{width: 30%; background-color: #2e3e88; height: 1px; @media (max-width:767px){width: 50%;};@media (max-width:500px){width: 100%;}}
     .header-logo{
         a{display:flex; justify-content: center; align-items: center;}
-        transform: translateY(-50%);
         margin: 0 15px;
-        @media (max-width:767px){min-width:120px}
-        width: 300px;
-        img{width: 100%; height: 100%;}
+        @media (max-width:767px){max-width:200px}
+        @media (max-width:500px){margin: 0px;}
+        max-width: 270px;
+        img{width: 100%; height: 100%; z-index: 70;}
     }
 }
 .header-burger {
@@ -168,6 +187,12 @@ section{
         }
     }
 }
+.burger.scroll{
+    span {
+        background-color: #ffffff;
+    }
+    .label{color: white !important;}
+}
 .burger{
     display: block;
     position: absolute;
@@ -179,11 +204,11 @@ section{
     cursor: pointer;
     z-index: 55;
     &__label{
-        @media (max-width:600px){font-size: 14px; top: 3px; margin-left: 40px;}
+        @media (max-width:600px){top: 3px; padding-left: 40px;}
         position: relative;
         color: #2e3e88;
         top: 1px;
-        margin-left: 40px;
+        padding-left: 40px;
         font-size: 16px;
     }
 }
@@ -194,7 +219,6 @@ section{
 }
 //--------------------------------------------------Меню-------------------------------------------------//
 .menu{
-    overflow: auto;
     left: -120%; 
     top: 0;
     transition: all ease 0.4s; 
@@ -203,10 +227,10 @@ section{
     width: 400px;
 }
 .menu.active {
+    overflow: auto;
     position: fixed;
     z-index: 50;
     left: 0;
-    background-color: #1d294a;
     background: linear-gradient(45deg,#17213c , #2e3e88);
     padding: 100px 40px 0;
     height: 100vh;
@@ -454,7 +478,7 @@ section{
     }
 }
 .directions {
-    padding: 130px 0px 100px;
+    padding: 40px 0px 100px;
 }
 .directions-tabs {
     display: flex;

@@ -15,10 +15,13 @@ const burger = document.querySelector('.header-burger'),
       labelBurger = document.querySelector('.burger__label'),
       menuBurger = document.querySelector('.menu'),
       body = document.body,
+      die = document.querySelector('.die'),
       sublinkMenu = document.querySelectorAll('.arrow'),
       menuLink = document.querySelectorAll('.item__link '),
       cardLink = document.querySelectorAll('.card__link'),
-      linkMore = document.querySelectorAll('.row-technologies__link-more');
+      linkMore = document.querySelectorAll('.row-technologies__link-more'),
+      offer = document.querySelector('.showcase__container'),
+      directions = document.querySelector('.directions');
 
 cardLink.forEach(element => {
     element.addEventListener('mouseover',(e)=>{
@@ -31,27 +34,67 @@ cardLink.forEach(element => {
     })
 });
 
+function Visible(target) {
+    // Получаем позиции окна
+    windowPosition = {
+        top: window.scrollY,
+    };
+    
+    if ( windowPosition.top > target.height()) 
+    {
+        $('.border').addClass('active');
+        $('.header').addClass('active');
+        $('.burger').addClass('scroll');
+        // var matrix = $(offer).css('transform');
+        // var matrixPersent = matrix.match(/-?\d+\.?\d*/g);
+        offer.style.cssText = `transform: translateY(-${windowPosition.top / 9}%);`;
+    } else {
+        $('.border').removeClass('active');
+        $('.header').removeClass('active');
+        $('.burger').removeClass('scroll');
+        offer.style.cssText = `transform: translateY('')`;
+    };
+};
+
+window.addEventListener('scroll', function(e) {
+    Visible ($('.border'));
+});
 
 burger.addEventListener('click', (event) => {
     burger.classList.toggle('active');
     menuBurger.classList.toggle('active');
+    body.classList.toggle('lock');
+    die.classList.toggle('active');
     if (burger.classList.contains('active')){
         setTimeout(()=>{
             labelBurger.textContent = 'Закрыть';
             labelBurger.style.color = "white";
             labelBurger.style.fontFamily = "Canrara";
             labelBurger.style.fontSize = "16";
-            labelBurger.style.marginLeft = "35px";
+            labelBurger.style.paddingLeft = "35px";
         }, 200)
     } else {
         labelBurger.textContent = 'Меню';
         labelBurger.style.color = "#2e3e88";
         labelBurger.style.fontFamily = "Centurygothic";
         labelBurger.style.fontSize = "16px";
-        labelBurger.style.marginLeft = "40px";
+        labelBurger.style.paddingLeft = "40px";
     }
-   
 });
+
+die.addEventListener('click',(i)=> {
+    die.classList.remove('active');
+    burger.classList.remove('active');
+    menuBurger.classList.remove('active');
+})
+$(document).keydown(function(e) {
+    if (e.code === 'Escape') {
+        die.classList.remove('active');
+        burger.classList.remove('active');
+        menuBurger.classList.remove('active')
+    }
+})
+
 
 sublinkMenu.forEach((event)=>{
     event.addEventListener('click',(e)=>{
