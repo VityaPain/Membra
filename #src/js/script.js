@@ -125,6 +125,8 @@ linkMore.forEach((event)=>{
 $(document).ready(function() {
     // СЛАЙДЕР
     $('.news-slider').slick({
+        draggable: false,
+        swipe: false,
         arrows: true,
         rtl: false,
         infinite: false,
@@ -142,6 +144,7 @@ $(document).ready(function() {
             {
                 breakpoint: 600,
                 settings:{
+                    swipe: true,
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
@@ -150,10 +153,7 @@ $(document).ready(function() {
     });
     
     myFunction();
-    // window.addEventListener("resize", myFunction);
-
     $(window).resize(myFunction);
-
 
     // Подсчет шагов в слайдере
     $('.slick-arrow').click(function() {
@@ -202,3 +202,4 @@ links.forEach((e) => {
         e.classList.add('active');
     })
 })
+
