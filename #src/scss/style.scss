@@ -107,7 +107,7 @@ body.lock{overflow: hidden;}
         img{width: 100%; vertical-align: middle;}
     }
 }
-section:not(.slogan){
+section:not(.slogan, .directions){
     padding: 130px 0 70px;
     @media (max-width:900px){padding: 70px 0px 50px ;}
     @media (max-width:600px){padding: 40px 0px 40px;}
@@ -564,7 +564,7 @@ section:not(.slogan){
     }
 }
 .directions {
-    padding: 40px 0px 100px;
+    padding: 40px 0px 0px;
     // @media (min-width:1440px){padding: 130px 0px 0px !important;}
     // @media (min-width:1920px){padding: 130px 0px 0px !important;}
 }
