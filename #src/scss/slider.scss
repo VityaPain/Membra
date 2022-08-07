@@ -39,16 +39,15 @@
 }
 
 .arrows {
-    width: 15%;
-    @media(min-width:2560px){width: 17%;}
-    @media(min-width:2560px){width: 14%;}
+    width: 11%;
+    padding-left: 20px;
+    @media(min-width:2560px){width: 12%;}
     display: flex;
     align-items: center;
     justify-content: space-between;
     & .step {
         color: #1d294a;
-        margin: 0px 15px;
-        font-size: 16px;
+        font-size: 18px;
         @media (max-width: 600px) {
             display: none;
         }
