@@ -80,6 +80,21 @@ function addStyleLabelMenu(){
     labelBurger.style.fontFamily = "Canrara";
     labelBurger.style.fontSize = "16px";
     labelBurger.style.paddingLeft = "35px";
+    console.log(window.outerWidth);
+    if (window.outerWidth >= 2560){
+        labelBurger.textContent = 'Закрыть';
+        labelBurger.style.color = "white";
+        labelBurger.style.fontFamily = "Canrara";
+        labelBurger.style.fontSize = "32px";
+        labelBurger.style.paddingLeft = "90px";
+    }
+    if (window.outerWidth >= 3840){
+        labelBurger.textContent = 'Закрыть';
+        labelBurger.style.color = "white";
+        labelBurger.style.fontFamily = "Canrara";
+        labelBurger.style.fontSize = "52px";
+        labelBurger.style.paddingLeft = "150px";
+    }
 }
 function removeStyleLabelMenu(){
     labelBurger.textContent = 'Меню';
@@ -87,6 +102,20 @@ function removeStyleLabelMenu(){
     labelBurger.style.fontFamily = "Centurygothic";
     labelBurger.style.fontSize = "16px";
     labelBurger.style.paddingLeft = "40px";
+    if (window.outerWidth >= 2560){
+        labelBurger.textContent = 'Меню';
+        labelBurger.style.color = "#2e3e88";
+        labelBurger.style.fontFamily = "Centurygothic";
+        labelBurger.style.fontSize = "32px";
+        labelBurger.style.paddingLeft = "90px";
+    }
+    if (window.outerWidth >= 3840){
+        labelBurger.textContent = 'Меню';
+        labelBurger.style.color = "#2e3e88";
+        labelBurger.style.fontFamily = "Centurygothic";
+        labelBurger.style.fontSize = "52px";
+        labelBurger.style.paddingLeft = "150px";
+    }
 }
 die.addEventListener('click',(i)=> {
     die.classList.remove('active');
