@@ -583,6 +583,7 @@ section:not(.slogan, .directions){
             position: relative;
             @media (max-width: 900px){padding-bottom: 50%; height: auto;}
             @media (max-width: 767px){padding-bottom: 70%; height: auto;}
+            @media(max-height:376px){padding-bottom: 58%; height: auto;}
             span{
                 position: absolute;
                 width: 100%;
@@ -721,6 +722,7 @@ section:not(.slogan, .directions){
         position: relative;
         @media (max-width: 900px){padding-bottom: 40%; height: auto;}
         @media (max-width: 767px){padding-bottom: 70%; height: auto;}
+        @media(max-height:376px){padding-bottom: 58%; height: auto;}
         span{
             position: absolute;
             width: 100%;
@@ -807,9 +809,7 @@ section:not(.slogan, .directions){
     padding: 0px 0px 30px;
     @media(min-width:2560px){padding: 0px 0px 100px;}
     @media(min-width:3840px){padding: 0px 0px 130px;}
-    @media (max-width:900px){
-        padding: 0 0 30px;
-    }
+    @media(max-width:600px){padding: 0px 0px 0px;}
     &__item {
         display: flex;
         flex-direction: column;
@@ -855,6 +855,7 @@ section:not(.slogan, .directions){
         padding-bottom: 65%;
         @media(min-width:2560px){padding-bottom: 70%;}
         @media(min-width:3840px){padding-bottom: 80%;}
+        @media(max-height:426px){padding-bottom: 50%;}
     }
     &__link {
         @media(min-width:2560px){margin-top: 20px !important;}
