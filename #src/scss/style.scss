@@ -627,7 +627,8 @@ section:not(.slogan, .directions){
         flex: 1 1 auto;
         color: #2e3e88;
         font-size: 18px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family:'Candara';
         line-height: 130%;
         @media (min-width:2560px){ font-size: 42px; }
         @media (min-width:3464px){font-size: 60px;}
@@ -646,6 +647,7 @@ section:not(.slogan, .directions){
     flex-direction: column;
     &__nav {
         display: flex;
+        a{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
         @media (max-width: 500px) {
             overflow: auto;
         }
@@ -765,7 +767,8 @@ section:not(.slogan, .directions){
         }
         p{
             font-size: 18px;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family:'Candara';
+            // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             @media (min-width:2560px){ font-size: 42px; }
             @media (min-width:3464px){font-size: 60px;}
             line-height: calc(30/24*100%);
@@ -791,6 +794,8 @@ section:not(.slogan, .directions){
     }
     &__sub-title:not(:last-child){margin-bottom: 20px; }
     &__sub-title {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: 'Candara';
         font-size: 20px;
         @media(min-width:2560px){  font-size: 32px; width: 70%;}
         @media(min-width:3840px){ font-size: 52px;}
