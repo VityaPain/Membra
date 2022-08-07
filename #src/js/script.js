@@ -171,6 +171,7 @@ $(document).ready(function() {
         slidesToShow: 3,
         slidesToScroll: 3,
         speed: 1100,
+        appendArrows: $('.arrows'),
         responsive:[
             {
                 breakpoint: 900,

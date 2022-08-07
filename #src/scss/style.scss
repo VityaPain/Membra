@@ -802,7 +802,7 @@ section:not(.slogan, .directions){
 }
 .news-slider {
     position: relative;
-    padding: 0px 0px 60px;
+    // padding: 0px 0px 60px;
     @media(min-width:2560px){padding: 0px 0px 100px;}
     @media(min-width:3840px){padding: 0px 0px 130px;}
     @media (max-width:900px){

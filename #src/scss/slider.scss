@@ -37,41 +37,22 @@
 .slick-slide.slick-cloned{}
 /* Стрелка */
 .slick-arrow{
-    position: absolute;
-    bottom: -8px;
     font-size: 0;
-    z-index: 20;
     width: 55px;
     height: 30px;
     animation: showBlock 0.8s linear forwards;
-    @media (min-width:2560px){width: 120px; height: 50px; bottom: -14px;}
-    @media (min-width:3464px){width: 150px; height: 70px; bottom: -14px;}
+    @media (min-width:2560px){width: 120px; height: 60px;}
+    @media (min-width:3464px){width: 150px; height: 85px;}
 }
-.step {
-    position: absolute;
-    bottom: 0;
-    left: 85px;
-    @media (max-width: 600px) {
-        display: none;
-    }
-    @media(min-width:2560px){font-size: 36px; left: 150px;}
-    @media(min-width:3840px){font-size: 52px; left: 200px;}
-}
+
 /* Стрелка влево */
 .slick-arrow.slick-prev{
-    left: 0;
     background: url("../img/arr.svg") 100% 100%/cover no-repeat; 
     transform: rotate(180deg);
-    @media (max-width:600px){ left: 0; }
-
 }
 /* Стрелка вправо */
 .slick-arrow.slick-next{
-    left: 150px;
     background: url("../img/arr.svg") 100% 100%/cover no-repeat; 
-    @media (max-width:600px){ right: 0%; left: auto;} 
-    @media (min-width:2560px){left: 200px;}
-    @media (min-width:3464px){left: 250px;}
 }
 /* Стрелка не активная */
 .slick-arrow.slick-disabled {
@@ -91,4 +72,23 @@
 /* Элемент точки */
 .categories-slider .slick-dots li button{
 
+}
+
+.arrows {
+    width: 15%;
+    @media(min-width:2560px){width: 17%;}
+    @media(min-width:2560px){width: 14%;}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & .step {
+        color: #1d294a;
+        margin: 0px 15px;
+        font-size: 16px;
+        @media (max-width: 600px) {
+            display: none;
+        }
+        @media(min-width:2560px){font-size: 42px;}
+        @media(min-width:3840px){font-size: 52px;}
+    }
 }
