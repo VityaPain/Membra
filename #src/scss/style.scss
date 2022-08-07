@@ -112,7 +112,7 @@ section:not(.slogan, .directions){
 .die{
     @media (max-width:425px){display: none;}
     right: 0%; 
-    top: -120%;
+    left: -120%;
     transition: all ease 0.4s 0.2s; 
     position: absolute;
 }
@@ -120,7 +120,8 @@ section:not(.slogan, .directions){
     @media (max-width:425px){display: none;}
     transition: all ease 0.4s 0.2s; 
     z-index: 50;
-    top: 0;
+    left: auto;
+    right: 0;
     width: calc(100% - 400px);
     @media(min-width:2560px){
         width: 50%;
