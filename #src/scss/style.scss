@@ -277,7 +277,7 @@ section:not(.slogan, .directions){
     cursor: pointer;
     z-index: 55;
     &__label{
-        @media (max-width:600px){top: 3px; padding-left: 40px;}
+        @media (max-width:600px){padding-left: 40px;}
         @media(min-width:2560px){
             font-size: 32px;
             top: 6px;
