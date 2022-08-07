@@ -8,7 +8,7 @@ function myFunction() {
     } else {
         len = $('.news-slider__item').length/2;
     }
-    $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
+    $('.slick-prev').after(`<div class="step">${step} / ${len}</div>`);
 }
 
 const burger = document.querySelector('.header-burger'),
@@ -207,7 +207,7 @@ $(document).ready(function() {
         if ($(this).hasClass('slick-prev')) {
             step-=1;
         }
-        $('.slick-prev').after(`<b class="step">${step} / ${len}</b>`);
+        $('.slick-prev').after(`<div class="step">${step} / ${len}</div>`);
     });
 
     //Плавный переход по якорной ссылке
