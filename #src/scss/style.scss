@@ -558,7 +558,7 @@ section:not(.slogan, .directions){
         margin: 10px 0;
         transition: all ease 0.4s;       
     }
-    &__link:hover{background-color: #FAFAFA; border: 1px solid #2e3e88; color: #2e3e88;}
+    &__link:hover{ @media(min-width:768px){background-color: #FAFAFA; border: 1px solid #2e3e88; color: #2e3e88;}}
 }
 //-----------------------------------------------------------------------------------------------------------//
 //--------------------------------------------------Направления----------------------------------------------//

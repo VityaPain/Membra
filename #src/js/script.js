@@ -139,8 +139,8 @@ if (window.outerWidth >= 768){
                 e.target.nextElementSibling.classList.add('active');
                 e.target.previousElementSibling.classList.add('active');
             } else {e.target.nextElementSibling.classList.remove('active');
-            e.target.previousElementSibling.classList.remove('active');
-        }
+                e.target.previousElementSibling.classList.remove('active');
+            }
         })
     })
 }
