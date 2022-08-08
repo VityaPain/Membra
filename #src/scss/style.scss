@@ -19,7 +19,6 @@
 //--------------------------------------------------Общие стили-------------------------------------------//
 body{
     background-color: #f7f7f7;
-    background-color: red;
     height: 100%;
     font-family: "Centurygothic";
 }
@@ -171,12 +170,15 @@ section:not(.slogan, .directions){
     display: none;
 }
 .border{
+    position:absolute;
+    bottom: -110%;
+    left: 0;
+    width: 100%;
     transition: all ease 0.4s;
     display: flex;
     align-items: center;
-    margin-top: -76px;
-    @media (max-width:767px){margin-top: -55px;}
-    @media (max-width:600px){margin-top: -55px;}
+    @media (max-width:767px){bottom: -83%;}
+    @media (max-width:400px){bottom: -71%;}
     @media(min-width:2560px){margin-top: -155px;}
     @media(min-width:3840px){margin-top: -212px;}
     z-index: 45;
