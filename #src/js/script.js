@@ -11,6 +11,10 @@ function myFunction() {
     $('.slick-prev').after(`<div class="step">${step} / ${len}</div>`);
 }
 
+let timerId = setTimeout(() => document.location.reload(true), 0);
+// alert(timerId); // идентификатор таймера
+clearTimeout(timerId);
+
 const burger = document.querySelector('.header-burger'),
       labelBurger = document.querySelector('.burger__label'),
       menuBurger = document.querySelector('.menu'),
