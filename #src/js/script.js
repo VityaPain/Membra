@@ -79,7 +79,6 @@ function addStyleLabelMenu(){
     labelBurger.style.fontFamily = "Canrara";
     labelBurger.style.fontSize = "16px";
     labelBurger.style.paddingLeft = "35px";
-    console.log(window.outerWidth);
     if (window.outerWidth >= 2560){
         labelBurger.textContent = 'Закрыть';
         labelBurger.style.color = "white";
@@ -149,14 +148,15 @@ if (window.outerWidth < 768){
     subMenu.forEach((event)=>{
         event.addEventListener('click',(e)=>{
             e.preventDefault();
-            console.log(e)
             e.target.classList.toggle('active');
             if (e.target.classList.contains('active')){
                 var arrow = e.target.nextElementSibling;
+                arrow.classList.add('active');
                 arrow.nextElementSibling.classList.add('active');
             } else {
                 var arrow = e.target.nextElementSibling;
                 arrow.nextElementSibling.classList.remove('active');
+                arrow.classList.remove('active');
             }
         })
     })
@@ -213,7 +213,6 @@ $(document).ready(function() {
     // Подсчет шагов в слайдере
     $('.slick-arrow').click(function() {
         myFunction();
-        // console.log('click');
         $('.step').remove();
         $('.step .slick-slide .slick-current .slick-active').remove();
         if ($(this).hasClass('slick-next')) {

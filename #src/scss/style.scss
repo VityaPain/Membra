@@ -351,7 +351,7 @@ section:not(.slogan, .directions){
         }
         @media(min-width:3840px){margin-bottom: 70px;}
     }
-    &__link:hover{color: #82d3ed; transition: all ease 0.4s;}
+    &__link:hover{@media(min-width: 768px){color: #82d3ed; transition: all ease 0.4s;}}
     &__link {
         transition: all ease 0.4s;
         display: block;
