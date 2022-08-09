@@ -19,6 +19,16 @@ let timerId = setTimeout(() => {
 // alert(timerId); // идентификатор таймера
 clearTimeout(timerId);
 
+const activeSub = document.querySelector('.sub-active');
+function addActiveSubMobile (){
+    if (window.outerWidth < 426){
+        activeSub.nextElementSibling.nextElementSibling.classList.add('active');
+        activeSub.nextElementSibling.classList.add('active')
+        activeSub.classList.add('active');
+    }
+}
+addActiveSubMobile();
+
 const burger = document.querySelector('.header-burger'),
       labelBurger = document.querySelector('.burger__label'),
       menuBurger = document.querySelector('.menu'),
