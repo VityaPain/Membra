@@ -11,7 +11,11 @@ function myFunction() {
     $('.slick-prev').after(`<div class="step">${step} / ${len}</div>`);
 }
 
-let timerId = setTimeout(() => document.location.reload(true), 0);
+let timerId = setTimeout(() => {
+    console.log('a');
+    // document.location.reload(true);
+    // console.log('a');
+    }, 10);
 // alert(timerId); // идентификатор таймера
 clearTimeout(timerId);
 
@@ -219,10 +223,10 @@ $(document).ready(function() {
         myFunction();
         $('.step').remove();
         $('.step .slick-slide .slick-current .slick-active').remove();
-        if ($(this).hasClass('slick-next')) {
+        if ($(this).hasClass('slick-next') && (step < len)) {
             step+=1;
         }
-        if ($(this).hasClass('slick-prev')) {
+        if ($(this).hasClass('slick-prev') && (step > 1)) {
             step-=1;
         }
         $('.slick-prev').after(`<div class="step">${step} / ${len}</div>`);
