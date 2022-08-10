@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="wrapper">
         @@include('_header.html')
         <main class="main">
-           
+            <div class="contacts">
+                <div class="container">
+                    <ul class="paths">
+                        <li class="paths-item">
+                            <a href="index.html" class="link-more">главная страница<span><img src="img/arr.svg" alt=""></span></a>
+                        </li>
+                        <li class="paths-item">
+                            <a href="#" class="link-more">контакты</a>
+                        </li>
+                    </ul>
+                    <div class="contacts-title title">
+                        Контакты
+                    </div>
+                    <div class="contacts-content">
+                        <div class="contacts-content__title title">
+                            Управляющая компания
+                        </div>
+                        <div class="contacts-content__info">
+                            <div class="contacts-content__info-item">
+                                <span>Email:</span>
+                                <a href="mailto:info@membratech.ru">info@membratech.ru</a>
+                            </div>
+                            <div class="contacts-content__info-item">
+                                <span>Телефон:</span>
+                                <a href="tel:+79052957838">+7 (905) 295-78-38</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         @@include('_footer.html')
     </div>
