@@ -4,6 +4,7 @@ let project_folder= require('path').basename(__dirname);
 let sourse_folder="#src";
 
 let Fs = require('fs');
+const { data } = require('jquery');
 
 let path={
     build:{
