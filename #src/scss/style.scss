@@ -1035,7 +1035,7 @@ section:not(.slogan, .directions){
         padding: 32px 0;
         @media (max-width: 500px) {padding: 20px 0px;}
         display: flex;
-        width: calc(50% - 26px);
+        width: 50%;
         @media (max-width:767px) {width: 100%;}
         border-top: 1px solid #d7d7dc;
         border-bottom: 1px solid #d7d7dc;
