@@ -1,0 +1,42 @@
+.technologies {
+    background-color: #f7f7f7;
+    &__container {
+    }
+
+    &__content {
+    }
+}
+.paths-item {
+}
+.link-more {
+}
+.content {
+
+    &__row {
+    }
+
+    &__column {
+    }
+
+    &__row-title {
+        
+    }
+
+    &__row-image {
+    }
+
+    &__row-link {
+    }
+
+    &__row-sub-title {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+        color: #2e3e88;
+        line-height: calc(30/20*100%);
+    }
+}
+.row-technologies {
+
+    &__link-more {
+    }
+}
