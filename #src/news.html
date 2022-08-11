@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/news.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -34,16 +34,16 @@
                                 <div class="card__date">
                                     01.04.2001
                                 </div>
+                                <a href="#" class="card__link link-more">
+                                    Подробнее 
+                                    <span>
+                                        <img src="img/arr.svg" alt="">
+                                    </span>
+                                </a>
                             </div>
                             <div class="card__image _ibg">
                                 <img src="img/news1.jpg" alt="">
                             </div>
-                            <a href="#" class="card__link link-more">
-                                Подробнее 
-                                <span>
-                                    <img src="img/arr.svg" alt="">
-                                </span>
-                            </a>
                         </div>
                         <div class="card">
                             <div class="card__text">
@@ -54,16 +54,16 @@
                                 <div class="card__date">
                                     01.04.2001
                                 </div>
+                                <a href="#" class="card__link link-more">
+                                    Подробнее 
+                                    <span>
+                                        <img src="img/arr.svg" alt="">
+                                    </span>
+                                </a>
                             </div>
                             <div class="card__image _ibg">
                                 <img src="img/news1.jpg" alt="">
                             </div>
-                            <a href="#" class="card__link link-more">
-                                Подробнее 
-                                <span>
-                                    <img src="img/arr.svg" alt="">
-                                </span>
-                            </a>
                         </div>
                         <div class="card">
                             <div class="card__text">
@@ -74,16 +74,16 @@
                                 <div class="card__date">
                                     01.04.2001
                                 </div>
+                                <a href="#" class="card__link link-more">
+                                    Подробнее 
+                                    <span>
+                                        <img src="img/arr.svg" alt="">
+                                    </span>
+                                </a>
                             </div>
                             <div class="card__image _ibg">
                                 <img src="img/news1.jpg" alt="">
                             </div>
-                            <a href="#" class="card__link link-more">
-                                Подробнее 
-                                <span>
-                                    <img src="img/arr.svg" alt="">
-                                </span>
-                            </a>
                         </div>
                         <div class="card">
                             <div class="card__text">
@@ -94,16 +94,36 @@
                                 <div class="card__date">
                                     01.04.2001
                                 </div>
+                                <a href="#" class="card__link link-more">
+                                    Подробнее 
+                                    <span>
+                                        <img src="img/arr.svg" alt="">
+                                    </span>
+                                </a>
                             </div>
                             <div class="card__image _ibg">
                                 <img src="img/news1.jpg" alt="">
                             </div>
-                            <a href="#" class="card__link link-more">
-                                Подробнее 
-                                <span>
-                                    <img src="img/arr.svg" alt="">
-                                </span>
-                            </a>
+                        </div>
+                        <div class="card">
+                            <div class="card__text">
+                                <div class="card__title">
+                                    Переработки калийных стоков
+                                </div>
+                                <div class="card__line"></div>
+                                <div class="card__date">
+                                    01.04.2001
+                                </div>
+                                <a href="#" class="card__link link-more">
+                                    Подробнее 
+                                    <span>
+                                        <img src="img/arr.svg" alt="">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="card__image _ibg">
+                                <img src="img/news1.jpg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,5 +132,22 @@
         @@include('_footer.html')
     </div>
     <script src="js/script.min.js"></script>
+    <script type="text/javascript">
+        let cardLinks = document.querySelectorAll('.card__link');
+        cardLinks.forEach(element => {
+            element.addEventListener('mouseover',(e)=>{
+                e.target.classList.add('active');
+                e.target.parentElement.nextElementSibling.classList.add('active');
+            })
+            element.addEventListener('mouseout',(e)=>{
+                e.target.classList.remove('active');
+                e.target.parentElement.nextElementSibling.classList.remove('active');
+            })
+        });
+        let news = document.querySelectorAll('.news__items .card');
+        if (outerWidth >= 425) {
+            news[0].classList.add('active');
+        }
+    </script>
 </body>
 </html>
