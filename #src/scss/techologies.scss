@@ -1,4 +1,4 @@
-
+@import 'generalstyle.scss';
 .technologies {
     padding: 130px 0 70px 0;
     @media(max-width:500px){padding: 113px 0 40px 0;}
@@ -33,8 +33,8 @@
     &__row:not(:last-child){
         margin-bottom: 70px;
         @media(max-width:767px){margin-bottom: 40px;}
-        @media (max-width:3840px){margin-bottom: 250px;}
-        @media (max-width:2560px){margin-bottom: 200px;}
+        @media (min-width:3840px){margin-bottom: 250px;}
+        @media (min-width:2560px){margin-bottom: 200px;}
     }
     &__row {
         display: flex;
