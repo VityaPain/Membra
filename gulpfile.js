@@ -16,7 +16,7 @@ let path={
     },
     src:{
         html: [sourse_folder+"/*.html", "!"+sourse_folder+"/_*.html"],
-        css: sourse_folder+"/scss/style.scss",
+        css: [sourse_folder+"/scss/*.scss", "!"+sourse_folder+"/scss/fonts.scss", "!"+sourse_folder+"/scss/slider.scss", "!"+sourse_folder+"/scss/nullstyle.scss"],
         js: sourse_folder+"/js/*.js",
         img: sourse_folder+"/img/**/*.{jpg,png,svg,gif,ico,webp}",
         fonts: sourse_folder+"/fonts/*.ttf",
