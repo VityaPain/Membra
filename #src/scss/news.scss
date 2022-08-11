@@ -49,9 +49,10 @@
     .news__items *.card:not(.active) {
         margin: 0px 0px 30px!important;
     }
-    // .news__items *.card:not(.active):nth-child(2n) {
-    //     margin: 0px 0px 30px -10px !important;
-    // }
+    .news__items *.card:not(.active):nth-child(2n) {
+        background-color: red;
+        // margin: 0px 0px 30px -10px !important;
+    }
     // .news__items *.card:not(.active):nth-child(2n+1) {
     //     margin: 0px -10px 30px 0px !important;
     // }
