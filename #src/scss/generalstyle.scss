@@ -133,13 +133,14 @@ body.lock{overflow: hidden;}
     &-item:not(:first-child) {
         a {
             padding: 0 10px;
+            @media (max-width:425px){padding:0px 5px;}
         }
     }
     &-item:first-child {
         a {transition: all ease 0.4s; span{opacity: 0.5;}}
         a span{
             padding-left:10px;
-            
+            @media (max-width:425px){padding-left:5px;}
         }
     }
     &-item:first-child:hover a{
@@ -151,7 +152,7 @@ body.lock{overflow: hidden;}
         a {
             font-family: 'Candara';
             font-size: 16px;
-            @media (max-width:425px){font-size: 14px;}
+            @media (max-width:425px){font-size: 13px;}
             @media(min-width:2560px){font-size: 52px;}
             @media(min-width:3840px){font-size: 65px;}
             margin: 0;
