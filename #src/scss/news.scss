@@ -14,7 +14,6 @@
 @media (min-width: 2560px) {
     .news__items *.card:not(.active):nth-child(3n+2) {
         margin: 0px 0px 90px -50px;
-        // background-color: pink;
     }
     .news__items *.card:not(.active):nth-child(3n+1) {
         margin: 0px -50px 90px 0px;
@@ -50,12 +49,11 @@
         margin: 0px 0px 30px!important;
     }
     .news__items *.card:not(.active):nth-child(2n) {
-        background-color: red;
-        // margin: 0px 0px 30px -10px !important;
+        margin: 0px 10px 30px -10px !important;
     }
-    // .news__items *.card:not(.active):nth-child(2n+1) {
-    //     margin: 0px -10px 30px 0px !important;
-    // }
+    .news__items *.card:not(.active):nth-child(2n+1) {
+        margin: 0px -10px 30px 10px !important;
+    }
 }
 
 .news__item .card .card__link.link-more {
