@@ -48,12 +48,18 @@
     .news__items *.card:not(.active) {
         margin: 0px 0px 30px!important;
     }
+<<<<<<< HEAD
     .news__items *.card:not(.active):nth-child(2n) {
         margin: 0px 10px 30px -10px !important;
     }
     .news__items *.card:not(.active):nth-child(2n+1) {
         margin: 0px -10px 30px 10px !important;
     }
+=======
+    // .news__items *.card:not(.active):nth-child(2n+1) {
+    //     margin: 0px -10px 30px 0px !important;
+    // }
+>>>>>>> de942a35e25c27c831b4c9f994f658e703fa3129
 }
 
 .news__item .card .card__link.link-more {
@@ -69,7 +75,7 @@
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);    
     padding: 15px 20px 15px 20px;
     transition: all ease 0.8s;
-    @media (max-width:767px){padding: 15px 15px 5px 15px;}
+    @media (max-width:767px){padding: 15px 15px 15px 15px;}
     @media(min-width:2560px){ padding: 30px 30px 20px 30px;}
     &__title {
         @media(min-width:2560px){font-size: 42px;}
