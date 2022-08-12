@@ -126,6 +126,7 @@
 }
 .card.active {
     flex: 0 1 100%;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);    
     margin: 0px 0px 70px !important;
     @media (max-width: 600px) {margin: 0px 0px 50px !important;}
     @media (min-width: 2560px) {margin: 0px 0px 120px !important;}
@@ -134,11 +135,13 @@
     justify-content: space-between;
     padding: 0px 0px;
     .card__image {
+        // box-shadow: 0;  
         padding-bottom: 30% !important;
         @media (max-width: 900px) {padding-bottom: 33% !important;}
         @media (max-width: 600px) {padding-bottom: 40% !important;}
     }
     .card__text {
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);    
         flex: 0 1 50%;
         @media (max-width: 425px) {flex: 0 1 100%;}
         width: 100%;
