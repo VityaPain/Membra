@@ -125,6 +125,7 @@ body.lock{overflow: hidden;}
 }
 .paths {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 60px;
     @media (max-width:767px) {margin-bottom: 40px;}
     @media (max-width:500px) {padding-top: 30px;}
@@ -132,8 +133,8 @@ body.lock{overflow: hidden;}
     @media(min-width:3840px){margin-bottom: 200px;}
     &-item:not(:first-child) {
         a {
-            padding: 0 10px;
-            @media (max-width:425px){padding:0px 5px;}
+            padding-left: 10px;
+            @media (max-width:425px){padding-left:5px;}
         }
     }
     &-item:first-child {
@@ -143,7 +144,15 @@ body.lock{overflow: hidden;}
             @media (max-width:425px){padding-left:5px;}
         }
     }
-    &-item:first-child:hover a{
+    // gotovo
+    &-item:not(:last-child) {
+        a {transition: all ease 0.4s; span{opacity: 0.5;}}
+        a span{
+            padding-left:10px;
+            @media (max-width:425px){padding-left:5px;}
+        }
+    }
+    &-item:not(:last-child):hover a{
         opacity: 1;
         span {opacity: 0.5; transition: none;}
         transition: all ease 0.4s;
