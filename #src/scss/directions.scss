@@ -8,7 +8,7 @@
 .content {
     &__item:not(:last-child){
         margin-bottom: 100px;
-        @media (max-width: 600px){margin-bottom: 70px;}
+        @media (max-width: 600px){margin-bottom: 50px;}
         @media(min-width:2560px){margin-bottom: 150px;}
         @media(min-width:3840px){margin-bottom: 300px;}
     }
@@ -17,6 +17,7 @@
         flex-direction: column;
         border-bottom: 1px solid #d7d7dc;
         padding-bottom: 40px;
+        @media (max-width: 600px){ padding-bottom: 30px;}
         @media(min-width:2560px){padding-bottom: 150px;}
         @media(min-width:3840px){padding-bottom: 300px;}
     }
