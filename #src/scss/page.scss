@@ -3,8 +3,8 @@
 .page {
     width: 100%;
     padding: 130px 0px 70px;
-    @media (min-width: 3840px) {padding: 290px 0px 120px;}
-    @media (min-width: 2560px) {padding: 180px 0px 100px;}
+    @media (min-width: 3840px) {padding: 450px 0px 120px;}
+    @media (min-width: 2560px) {padding: 350px 0px 100px;}
     @media (max-width: 767px) {
         padding: 115px 0px 70px;
     }
@@ -87,6 +87,7 @@
     @media (min-width: 3840px) {padding: 320px 0px 0px;}
     @media (min-width: 2560px) {padding: 170px 0px 0px;}
     @media (max-width: 900px) {padding: 100px 0px 0px;}
+    @media (max-width: 767px) {padding: 130px 0px 0px;}
     @media (max-width: 500px) {padding: 90px 0px 0px;}
     &__title {
         text-align: left;
