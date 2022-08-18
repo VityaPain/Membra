@@ -115,7 +115,7 @@ body.lock{overflow: hidden;}
     z-index: 50;
     left: auto;
     right: 0;
-    width: calc(100% - 400px);
+    width: calc(100% - 450px);
     @media(min-width:2560px){
         width: 50%;
     }
@@ -361,7 +361,7 @@ body.lock{overflow: hidden;}
     @media(min-width:2560px){
         width: 50%;
     }
-    width: 400px;
+    width: 450px;
 }
 .menu.active {
     overflow: auto;
@@ -395,11 +395,11 @@ body.lock{overflow: hidden;}
 .item {
     position: relative;
     &__link.sub.active{
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         @media(min-width:2560px){
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
-        @media(min-width:3840px){margin-bottom: 70px;}
+        @media(min-width:3840px){margin-bottom: 75px;}
     }
     &__link:hover{@media(min-width: 768px){color: #82d3ed; transition: all ease 0.4s;}}
     &__link {
@@ -463,7 +463,7 @@ body.lock{overflow: hidden;}
         display: block;
         position: relative;
         top: 0;
-        left: 0;
+        left: 25px;
         transition: all ease 0.4s;
     }
 }
