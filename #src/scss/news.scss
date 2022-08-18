@@ -97,7 +97,7 @@
         font-size: 14px;
         @media(min-width:2560px){font-size: 30px; padding: 20px 0 40px;}
         @media(min-width:3840px){font-size: 42px; padding: 30px 0 50px;}
-        padding: 10px 0px 20px;
+        padding: 10px 0px 10px;
         color: #1d294a;
         opacity: 0.7;
     }
@@ -118,6 +118,7 @@
         // @media(max-height:426px){padding-bottom: 50%;}
     }
     &__link {
+        padding:10px 10px 15px 0;
         @media (max-width: 425px) {font-size: 14px;}
         @media(min-width:2560px){margin-top: 20px !important;}
         @media(min-width:3840px){margin-top: 30px !important;}
