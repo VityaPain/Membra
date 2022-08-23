@@ -357,6 +357,9 @@ section:not(.slogan, .directions){
             @media (min-width:2560px){margin-bottom: 30px;}
             @media (min-width:3464px){margin-bottom: 50px;}
         }
+        & > *:last-child{
+            margin-bottom: 20px;
+        }
         p{
             font-size: 18px;
             font-family:'Candara';

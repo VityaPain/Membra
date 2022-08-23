@@ -41,6 +41,7 @@
     }
     &__column {
         flex: 0 1 50%;
+        & .link-more{margin-top: 10px !important;}
     }
     &__row-image {
         flex: 0 0 100%;
