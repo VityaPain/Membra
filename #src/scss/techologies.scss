@@ -1,7 +1,7 @@
 @import 'generalstyle.scss';
 .technologies {
     padding: 130px 0 70px 0;
-    @media(max-width:500px){padding: 113px 0 40px 0;}
+    @media(max-width:500px){padding: 113px 0 40px 0 !important;}
     @media(min-width:2560px){padding: 250px 0 100px 0;}
     @media(min-width:3840px){padding: 350px 0 120px 0;}
     background-color: #f7f7f7;
@@ -16,6 +16,8 @@
     &__row{
         display:flex;
         flex-wrap: wrap;
+        margin: 0 -30px;
+        @media(max-width:900px){margin: 0;}
     }
     &__row:not(:last-child){
         margin-bottom: 70px;
